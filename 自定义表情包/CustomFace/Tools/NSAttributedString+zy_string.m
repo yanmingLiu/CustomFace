@@ -32,4 +32,11 @@
     return attributeString.string;
 }
 
+- (CGFloat)heightOfWidth:(CGFloat)maxWidth {
+    CGFloat height = [self boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:(NSStringDrawingUsesLineFragmentOrigin) context:nil].size.height;
+    NSLog(@"富文本高度 = %f", height);
+    return ceil(height) + 1;
+}
+
 @end
+

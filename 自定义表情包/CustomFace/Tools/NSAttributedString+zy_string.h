@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSAttributedString (zy_string)
+
 - (NSString *)toString;
+
+- (CGFloat)heightOfWidth:(CGFloat)maxWidth;
+
 @end

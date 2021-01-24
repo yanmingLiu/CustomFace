@@ -44,7 +44,8 @@
     //添加标签名
     faceAttachement.tagName = model.tagName;
     //设置表情大小
-    faceAttachement.bounds = CGRectMake(0, 0, 18, 18);
+    faceAttachement.bounds = CGRectMake(0, -4, [UIFont systemFontOfSize:16].lineHeight, [UIFont systemFontOfSize:16].lineHeight);
+
     //记录光标位置
     NSInteger location = textView.selectedRange.location;
     //插入表情
@@ -81,8 +82,8 @@
                 faceAttachment.imageName = model.imageName;
                 faceAttachment.tagName = model.tagName;
                 faceAttachment.range = range;
-                faceAttachment.bounds = CGRectMake(0, 0, 18, 18);
-                
+                faceAttachment.bounds = CGRectMake(0, -4, [UIFont systemFontOfSize:16].lineHeight, [UIFont systemFontOfSize:16].lineHeight);
+
                 [faceModelArr addObject:faceAttachment];
             }
         }
@@ -95,8 +96,7 @@
         [attributedString replaceCharactersInRange:faceAttachment.range withAttributedString:faceAttributedString];
     }
     
-    
-    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} range:NSMakeRange(0, attributedString.length)];
     
     return attributedString;
 }
